@@ -1,0 +1,104 @@
+{
+  "model_name": "Logistic Regression (tuned)",
+  "best_params": {
+    "C": 0.1,
+    "class_weight": null
+  },
+  "target": "churn (1 = cancels next month)",
+  "numeric_features": [
+    "tenure_months",
+    "monthly_charges",
+    "total_charges",
+    "num_complaints_6m",
+    "avg_data_gb",
+    "senior_citizen"
+  ],
+  "categorical_features": [
+    "contract_type",
+    "internet_service",
+    "tech_support",
+    "payment_method",
+    "paperless_billing",
+    "city_tier"
+  ],
+  "integer_features": [
+    "tenure_months",
+    "num_complaints_6m",
+    "senior_citizen"
+  ],
+  "categories": {
+    "contract_type": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "internet_service": [
+      "DSL",
+      "Fiber optic",
+      "No internet"
+    ],
+    "tech_support": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "payment_method": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "UPI autopay"
+    ],
+    "paperless_billing": [
+      "No",
+      "Yes"
+    ],
+    "city_tier": [
+      "Tier 1",
+      "Tier 2",
+      "Tier 3"
+    ]
+  },
+  "numeric_ranges": {
+    "tenure_months": [
+      0.0,
+      72.0
+    ],
+    "monthly_charges": [
+      199.0,
+      1546.0
+    ],
+    "total_charges": [
+      0.0,
+      108765.23
+    ],
+    "num_complaints_6m": [
+      0.0,
+      6.0
+    ],
+    "avg_data_gb": [
+      0.1,
+      416.0
+    ],
+    "senior_citizen": [
+      0.0,
+      1.0
+    ]
+  },
+  "threshold": 0.38,
+  "business_assumptions": {
+    "offer_cost_rupees": 500,
+    "saved_customer_value_rupees": 4000,
+    "offer_success_rate": 0.3,
+    "note": "Threshold chosen to maximise expected profit on out-of-fold training predictions."
+  },
+  "cv_pr_auc": 0.5373,
+  "test_metrics": {
+    "roc_auc": 0.8168,
+    "pr_auc": 0.5013,
+    "precision": 0.484,
+    "recall": 0.484,
+    "f1": 0.484
+  },
+  "test_churn_rate": 0.188,
+  "train_rows": 4000
+}
